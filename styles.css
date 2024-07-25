@@ -11,6 +11,7 @@ body {
   font-family: "FiraSans", sans-serif;
   line-height: 1.5;
   --primary-color: #00aeef;
+  --primary-color-low: #7ddcff;
   --secondary-color: #242424;
   width: 100vw;
   height: 100vh;
@@ -24,7 +25,7 @@ h3 {
 }
 
 h1 {
-  font-size: 34px;
+  font-size: 46px;
 }
 
 p,
@@ -92,12 +93,13 @@ footer {
 /* TOP BAR */
 .top-bar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 16px;
+  left: 16px;
+  right: 16px;
   background-color: var(--secondary-color);
   color: white;
   padding: 10px 16px;
+  border-radius: 8px;
   span {
     letter-spacing: 0.8px;
   }
@@ -110,40 +112,74 @@ footer {
 
 /* HERO */
 .hero {
-  background-color: var(--primary-color);
-  width: 100%;
-  height: 85%;
+  background-color: white;
+  width: 100vw;
+  height: 96.5%;
   h2 {
     font-weight: normal;
   }
   .hero-container {
-    display: grid;
-    grid-template-columns: 3fr 1fr;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     gap: 20px;
+    background-image: linear-gradient(
+        var(--primary-color-low) 1px,
+        transparent 1px
+      ),
+      linear-gradient(to right, var(--primary-color-low) 1px, transparent 1px);
+    background-size: 80px 80px;
+    background-color: var(--primary-color);
+    margin: 16px;
+    border-radius: 8px;
     color: white;
-    padding: 200px 15%;
-
-    .hero-text {
-      display: flex;
-      flex-direction: column;
-      align-items: start;
-      justify-content: center;
-      gap: 40px;
-    }
 
     img {
       max-width: 400px;
+    }
+
+    #vpk-logo {
+      width: 200px;
     }
     .titre {
       display: flex;
       align-items: center;
       flex-wrap: wrap;
       gap: 20px;
-
-      #vpk-logo {
-        width: 200px;
-      }
     }
+  }
+}
+
+/* PRESENTATION */
+.presentation {
+  padding: 100px 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+  .presentation-text {
+    flex: 2;
+    font-style: italic;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    gap: 10px;
+    min-width: 300px;
+  }
+
+  img {
+    width: 400px;
+    flex: 1;
+  }
+
+  p {
+    font-size: 20px;
   }
 }
 
@@ -154,18 +190,12 @@ footer {
   margin-left: auto;
   height: auto;
   .competences-container {
-    margin-top: -150px;
     display: flex;
     justify-content: center;
     gap: 20px;
     flex-wrap: wrap;
     .icon {
       width: 50px;
-    }
-    p {
-    }
-    h3,
-    .muted {
     }
   }
 }
@@ -213,14 +243,25 @@ footer {
 /* CONTACT */
 .contact {
   color: white;
+  background-image: linear-gradient(
+      var(--primary-color-low) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to right, var(--primary-color-low) 1px, transparent 1px);
+  background-size: 80px 80px;
   background-color: var(--primary-color);
-  width: 100%;
+  margin: 16px;
+  border-radius: 8px;
+
   .contact-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     padding: 100px 0;
+  }
+  p {
+    font-size: 20px;
   }
 }
 
@@ -245,7 +286,15 @@ footer {
 
 /* ASSURANCES */
 .assurances {
+  background-image: linear-gradient(
+      var(--primary-color-low) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to right, var(--primary-color-low) 1px, transparent 1px);
+  background-size: 80px 80px;
   background-color: var(--primary-color);
+  margin: 16px;
+  border-radius: 8px;
   color: white;
   .assurances-container {
     padding: 100px 0;
@@ -257,10 +306,16 @@ footer {
     align-items: center;
     justify-content: center;
   }
+  p,
+  li {
+    font-size: 20px;
+  }
 }
 
 /* CONTACT FINAL */
 .contact-final {
+  color: white;
+  width: 100%;
   background-color: var(--secondary-color);
   .contact-final-container {
     padding: 100px 15%;
@@ -337,10 +392,6 @@ footer {
 
 .radius {
   border-radius: 8px;
-}
-
-.no-wrap {
-  white-space: nowrap;
 }
 
 /* RESPONSIVE  */
